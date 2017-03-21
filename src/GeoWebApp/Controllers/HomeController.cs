@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using GeoWebApp.Models;
+using Microsoft.Extensions.Options;
 
 namespace GeoWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        protected readonly AppSettings _appSettings;
+
+        public HomeController(IOptions<AppSettings> appSettings)
         {
-            return View();
+            _appSettings = appSettings.Value;
         }
 
-        public IActionResult About()
+        public IActionResult Index()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewBag.DataCenter = _appSettings.DataCenter;
             return View();
         }
 
