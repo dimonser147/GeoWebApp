@@ -1,8 +1,9 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnv
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <h2>
     WebApp is hosted in the <b>@ViewBag.DataCenter</b> data center
 </h2>
-<p>Lorem ipsum...</p>
+<p>Current environment is <b>@hostingEnv.EnvironmentName</b></p>

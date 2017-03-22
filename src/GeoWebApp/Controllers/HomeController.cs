@@ -19,7 +19,7 @@ namespace GeoWebApp.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.DataCenter = Environment.GetEnvironmentVariable("DATA_CENTER");
+            ViewBag.DataCenter = Environment.GetEnvironmentVariable("DATA_CENTER") ?? "Unknown";
             return View();
         }
 

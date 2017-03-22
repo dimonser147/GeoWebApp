@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using GeoWebApp.Models;
+using Microsoft.AspNetCore.Rewrite;
+using GeoWebApp.Utilities.Rules;
 
 namespace GeoWebApp
 {
@@ -48,7 +50,11 @@ namespace GeoWebApp
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            
+
+            var options = new RewriteOptions();
+            options.Rules.Add(new WwwRule());
+            app.UseRewriter(options);
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
