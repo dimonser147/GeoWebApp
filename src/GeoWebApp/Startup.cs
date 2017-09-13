@@ -52,7 +52,7 @@ namespace GeoWebApp
             }
 
             var options = new RewriteOptions();
-            options.Rules.Add(new WwwRule());
+            //options.Rules.Add(new WwwRule());
             app.UseRewriter(options);
 
             app.UseStaticFiles();
