@@ -7,4 +7,4 @@ This is an example of geo-distributed web application using Azure Traffic Manage
 2. check out [live demo]
 
 [my blog]: http://backend-devs.com/blog/archive/multi-regional-aspnet-core-with-azure-traffic-manager/
-[live demo]: http://www.geoapp.tk/
+[live demo]: http://geowebapp2.trafficmanager.net/
